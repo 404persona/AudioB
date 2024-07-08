@@ -13,6 +13,7 @@ const {
   GetProductById,
   DeleteProduct,
   AddReview,
+  UpdateProduct
 } = require("../Controllers/ProductControl");
 const upload = require("../Middleware/UploadMiddeware");
 const Blogupload = require("../Middleware/BlogMiddleware");
@@ -41,6 +42,7 @@ Router.post(
 Router.get("/getproducts", GetProducts);
 Router.get("/product/:productId", GetProductById);
 Router.delete("/deleteproduct/:productId", DeleteProduct);
+Router.put('/updateproduct/:productId', UpdateProduct);
 // blog Routes
 Router.post("/createblog", Blogupload.single("featuredImage"), registerBlog);
 Router.get("/getblogs", getBlogs);
